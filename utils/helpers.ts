@@ -204,3 +204,26 @@ export const getTodayHabitCompletion = (habits: Habit[], completedHabits: Comple
     const total = habits.length > 0 ? habits.length : 1;
     return { completed, total: habits.length, percentage: habits.length > 0 ? Math.round((completed / habits.length) * 100) : 0 };
 };
+
+export const getWeeklyHabitConsistency = (habits: Habit[], completedHabits: CompletedHabits) => {
+    const weekDays = getDaysOfCurrentWeek();
+    if (habits.length === 0) return { completed: 0, total: 0, percentage: 0 };
+
+    let totalCompleted = 0;
+    const totalPossible = habits.length * 7;
+
+    weekDays.forEach(day => {
+        const dayHabits = completedHabits[day.dateKey] || {};
+        habits.forEach(habit => {
+            if (dayHabits[habit.id]) {
+                totalCompleted++;
+            }
+        });
+    });
+
+    return {
+        completed: totalCompleted,
+        total: totalPossible,
+        percentage: totalPossible > 0 ? Math.round((totalCompleted / totalPossible) * 100) : 0,
+    };
+};

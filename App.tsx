@@ -284,7 +284,8 @@ const App: React.FC = () => {
             case 'planner': return <Planner scheduleByDate={config.scheduleByDate} completedTasks={completedTasks} toggleTask={toggleTask} />;
             case 'analytics': return <Analytics scheduleByDate={config.scheduleByDate} completedTasks={completedTasks} completedHabits={completedHabits} subjects={subjects} habits={config.habits} totalWeeks={totalWeeks} />;
             case 'habits': return <Habits habits={config.habits} completedHabits={completedHabits} toggleHabit={toggleHabit} currentTime={currentTime} scheduleByDate={config.scheduleByDate} />;
-            case 'config': return <Config config={config} setCompletedTasks={setCompletedTasks} setCompletedHabits={setCompletedHabits} exportConfig={exportConfig} importConfig={importConfig} resetConfig={resetConfig} exportToICS={exportToICS} addExam={addExam} editExam={editExam} deleteExam={deleteExam} addHabit={addHabit} editHabit={editHabit} deleteHabit={deleteHabit} addScheduleDate={addScheduleDate} deleteScheduleDate={deleteScheduleDate} addScheduleTask={addScheduleTask} editScheduleTask={editScheduleTask} deleteScheduleTask={deleteScheduleTask} subjects={subjects} showToast={showToast} />;
+            // FIX: Removed `subjects` prop from Config component as it's not defined in its props.
+            case 'config': return <Config config={config} setCompletedTasks={setCompletedTasks} setCompletedHabits={setCompletedHabits} exportConfig={exportConfig} importConfig={importConfig} resetConfig={resetConfig} exportToICS={exportToICS} addExam={addExam} editExam={editExam} deleteExam={deleteExam} addHabit={addHabit} editHabit={editHabit} deleteHabit={deleteHabit} addScheduleDate={addScheduleDate} deleteScheduleDate={deleteScheduleDate} addScheduleTask={addScheduleTask} editScheduleTask={editScheduleTask} deleteScheduleTask={deleteScheduleTask} showToast={showToast} />;
             default: return null;
         }
     };
