@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Study Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-main: #222222;
+        --bg-card: #2C2C2C;
+        --bg-inner: #222222;
+        --border-color: #3A3A3A;
+        --text-primary: #EAE0D5;
+        --text-secondary: #9E9E9E;
+        --accent-green: #93A38C;
+        --accent-terracotta: #D88C76;
+      }
+
+      html.light {
+        --bg-main: #F5F5F3;
+        --bg-card: #FFFFFF;
+        --bg-inner: #F5F5F3;
+        --border-color: #E5E5E3;
+        --text-primary: #2C2C2C;
+        --text-secondary: #70706E;
+        --accent-green: #6A7A64;
+        --accent-terracotta: #C66B51;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .font-serif {
+        font-family: 'Lora', serif;
+      }
+      
+      /* Accessibility focus ring */
+      *:focus-visible {
+        outline: 2px solid var(--accent-terracotta);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
